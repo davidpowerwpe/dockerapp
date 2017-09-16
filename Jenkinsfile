@@ -1,21 +1,31 @@
 pipeline {
     agent any
 
+    environment {
+        PROJECT_NAME="dockerapp-$BUILD_TAG"
+    }
+
     stages {
-        stage('Build') {
-            agent any
+        
+        // Pull code from Github
+        stage('Checkout Code') {
             steps {
                 checkout scm
             }
         }
-        stage('Test') {
+        
+        // Setup and Run Tests
+        stage('Build & Test') {
             steps {
                 echo 'Testing..'
+                sh './docker/build_and_test.sh '
             }
         }
-        stage('Deploy') {
+
+        // Save our results
+        stage('Archive Results') {
             steps {
-                echo 'Deploying....'
+                junit 'artifacts/tests_output.xml'
             }
         }
     }
