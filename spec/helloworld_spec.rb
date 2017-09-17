@@ -13,6 +13,10 @@ RSpec.describe HelloWorld do
         it 'returns a hello world string with given name' do
           expect(hello.helloWithName('James')).to eq('hello world, James')
         end
+
+        it 'returns a hello world string with given no name when given empty string' do
+          expect(hello.helloWithName('')).to eq('hello world, ')
+        end
       end
   end
 end
