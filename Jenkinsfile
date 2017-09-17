@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PROJECT_NAME="dockerapp-$BUILD_TAG"
+        PROJECT_NAME="dockerapp_$BUILD_TAG"
     }
 
     stages {
