@@ -1,6 +1,8 @@
 pipeline {
     agent any
 
+    // Not used here but worth mentioning;
+    // - concurrent docker compose projects to run without interference
     environment {
         PROJECT_NAME="dockerapp-$BUILD_TAG"
     }
@@ -17,7 +19,6 @@ pipeline {
         // Setup and Run Tests
         stage('Build & Test') {
             steps {
-                echo 'Testing..'
                 sh './docker/build_and_test.sh '
             }
             
