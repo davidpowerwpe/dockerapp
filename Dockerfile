@@ -4,6 +4,6 @@ RUN apt-get update -qq \
  && apt-get install -y \
       nodejs
 
-WORKDIR ruby_app
+WORKDIR ruby-app
 
 COPY ./ ./
