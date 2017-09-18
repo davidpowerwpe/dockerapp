@@ -1,4 +1,4 @@
-# dockerapp
+# Docker Demo 2
 
 Hello World Application and Tests.
 
