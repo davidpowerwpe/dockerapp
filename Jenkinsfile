@@ -8,7 +8,6 @@ pipeline {
     }
 
     stages {
-        
         // Pull code from Github
         stage('Checkout Code') {
             steps {
@@ -16,7 +15,7 @@ pipeline {
             }
         }
         
-        // Setup and Run Tests
+        // Get dependencies and run tests
         stage('Build & Test') {
             steps {
                 sh './docker/build_and_test.sh '
@@ -25,7 +24,7 @@ pipeline {
             post {
                 // Save our results
                 always {
-                    junit 'dockerapp/artifacts/tests_output.xml'
+                    junit 'docker_demo_2/artifacts/tests_output.xml'
                 }
             }
         }
