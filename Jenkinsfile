@@ -4,7 +4,7 @@ pipeline {
     // Not used here but worth mentioning;
     // - concurrent docker compose projects to run without interference
     environment {
-        PROJECT_NAME="dockerapp-$BUILD_TAG"
+        COMPOSE_PROJECT_NAME="docker_demo_2-$BUILD_TAG"
     }
 
     stages {
