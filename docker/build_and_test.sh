@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ "$(whoami)" == 'jenkins' ]; then
-    VOL="${WORKSPACE}/dockerapp/artifacts"
+    VOL="${WORKSPACE}/docker_demo_2/artifacts"
 else
-    VOL="/Users/david.power/Projects/dockerapp/artifacts"
+    VOL="/Users/david.power/Projects/docker_demo_2/artifacts"
 fi
 
 # remove old artifacts and set up new directory
