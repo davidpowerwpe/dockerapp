@@ -1,12 +1,6 @@
 pipeline {
     agent any
-
-    // Not used here but worth mentioning;
-    // - concurrent docker compose projects to run without interference
-    environment {
-        COMPOSE_PROJECT_NAME="docker_demo_2-$BUILD_TAG"
-    }
-
+    
     stages {
         // Pull code from Github
         stage('Checkout Code') {
